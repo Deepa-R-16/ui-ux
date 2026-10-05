@@ -1,0 +1,6 @@
+{
+  "name": "Chennai Pulse — Event Discovery & Ticket Booking",
+  "description": "Find your next Chennai moment. Discover concerts, comedy nights, theatre, workshops, festivals and book tickets across Chennai.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

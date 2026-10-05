@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  :root, [data-theme="light"], .light {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-subtle: #f1f5f9;
+    --border-color: #e2e8f0;
+    --border-color-hover: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --highlight: #e11d48;
+    --highlight-hover: #be123c;
+    --highlight-subtle: #ffe4e6;
+    --accent-blue: #2563eb;
+    --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  }
+
+  [data-theme="dark"], .dark {
+    --bg-main: #0b0f19;
+    --bg-surface: #131b2b;
+    --bg-card: #131b2b;
+    --bg-card-subtle: #1a2438;
+    --border-color: #212c42;
+    --border-color-hover: #334466;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --highlight: #f43f5e;
+    --highlight-hover: #e11d48;
+    --highlight-subtle: rgba(244, 63, 94, 0.12);
+    --accent-blue: #38bdf8;
+    --shadow-subtle: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    --shadow-elevated: 0 8px 16px -2px rgba(0, 0, 0, 0.35);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Flat Bold Color Block Cards with Subtle Drop Shadows */
+.stage-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stage-card:hover {
+  border-color: var(--highlight);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
